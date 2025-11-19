@@ -1,6 +1,6 @@
 const container = document.querySelector('.container');
 const containerWidth = 600;
-const divAmount = 50; 
+let divAmount = 50; 
 const totalSquares = divAmount * divAmount;
 
 const boxCalc = function() {
@@ -51,6 +51,17 @@ createGrid();
 
 
 const numButton = document.querySelector('.squareNumber')
-//numButton.addEventListener('click', prompt('how many squares'))
+numButton.addEventListener('click', () => {
+    const userGrid = prompt('how many squares?');
+
+    if ( userGrid !== null){
+        divAmount = userGrid;
+        createGrid()
+    };
+if (userGrid >= 101) {
+    alert("100 squares is the limit");
+    return;
+}
+} )
 
 
