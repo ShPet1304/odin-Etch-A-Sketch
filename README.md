@@ -1,10 +1,10 @@
-# odin-Etch-A-Sketch 🎨
+# Odin-Etch-A-Sketch 🎨
 
 A browser-based sketchpad created as part of The Odin Project's Foundations curriculum. This project focuses on DOM manipulation, JavaScript fundamentals, and event listeners.
 
 
 ## 🔗 Live Preview
-[**Click here to view the live demo**]
+[**Click here to view the live demo**] https://shpet1304.github.io/odin-Etch-A-Sketch/
 
 ## 🧐 About The Project
 The goal of this project was to create a digital "Etch-a-Sketch" using HTML, CSS, and Vanilla JavaScript. It involves creating a grid of square `divs` that change color when the mouse hovers over them.
