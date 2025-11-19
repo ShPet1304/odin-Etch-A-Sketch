@@ -1,11 +1,18 @@
 
-
+body {
+    background-color: #313647;
+}
+h1{
+    color: #FFF8D4;
+    text-align: center;
+}
 .container {
     
     display: flex; 
     flex-wrap: wrap; 
     box-sizing: border-box;
     border: 1px solid black; 
+    margin-top: -220px;
 }
 
 
@@ -16,8 +23,33 @@
 
 
 .grid-cell {
-    background-color: white;
-    border: 1px solid #eee;
+    background-color: #eee;
+    border: 1px solid black;
     box-sizing: border-box;
     flex-shrink: 0; 
+}
+
+.squareNumber{
+    margin-bottom: 30px;
+    padding: 5px;
+    border-radius: 5px;
+    background-color: #A3B087;
+    color: #FFF8D4;
+}
+.legend{
+    width: 300px;
+    background-color: #A3B087;
+    text-align:start;
+    padding: 8px;
+    border-radius: 4px;
+  margin-left: auto;
+  margin-right: 0;
+}
+.legend h3 {
+    text-align: center;
+    color: #FFF8D4;
+}
+
+.legend p {
+    color: #435663;
 }

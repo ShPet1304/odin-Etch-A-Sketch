@@ -1,6 +1,6 @@
 const container = document.querySelector('.container');
 const containerWidth = 600;
-let divAmount = 50; 
+let divAmount = 16; 
 const totalSquares = divAmount * divAmount;
 
 const boxCalc = function() {
@@ -31,9 +31,13 @@ function createGrid() {
             
             newDiv.style.width = cellDimension;
 
-            newDiv.addEventListener('mouseover', function() {
-                newDiv.style.backgroundColor = 'blue';
-            });
+            newDiv.addEventListener('mouseover', (e) => {
+                {
+                const r = Math.floor(Math.random() * 256);
+                const g = Math.floor(Math.random() * 256);
+                 const b = Math.floor(Math.random() * 256);
+                e.target.style.backgroundColor = `rgb(${r}, ${g}, ${b})`;
+                }})
 
             newDiv.addEventListener('click', function() {
                 newDiv.style.backgroundColor = '';
