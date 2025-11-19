@@ -1,32 +1,56 @@
 const container = document.querySelector('.container');
-let divAmount = 256;
+const containerWidth = 600;
+const divAmount = 50; 
+const totalSquares = divAmount * divAmount;
 
-
-for (let i = 0; i < divAmount; i++){
-    const newDiv = document.createElement("div");
-    newDiv.classList.add('drawBlock');
-    newDiv.style.width = '30px';
-    newDiv.style.height = '30px';
-    newDiv.style.border = '1px solid'
-    container.appendChild(newDiv)
+const boxCalc = function() {
+    let percentVal = `${100 / divAmount}%`;
+    return percentVal;
 };
 
-const blocks = document.querySelectorAll('.drawBlock');
-blocks.forEach(block => {
-block.addEventListener(
-    'mouseenter',
-    (event) => {
-        event.target.style.backgroundColor = "blue";
-    }, 
-);
-});
+//  Create container function 
+function createGrid() {
+    container.innerHTML = '';
 
+    container.style.width = `${containerWidth}px`;
+    container.style.height = `${containerWidth}px`;
 
-blocks.forEach(block => {
-    block.addEventListener(
-        'click',
-        (event) => {
-            event.target.style.backgroundColor = "";
+    const cellDimension = boxCalc(); 
+    const rowHeight = cellDimension;
+
+    
+    for (let i = 0; i < divAmount; i++) {
+        const newRow = document.createElement('div');
+        newRow.classList.add('grid-row');
+        newRow.style.height = rowHeight; 
+
+        
+        for (let j = 0; j < divAmount; j++) {
+            const newDiv = document.createElement('div');
+            newDiv.classList.add('grid-cell');
+            
+            newDiv.style.width = cellDimension;
+
+            newDiv.addEventListener('mouseover', function() {
+                newDiv.style.backgroundColor = 'blue';
+            });
+
+            newDiv.addEventListener('click', function() {
+                newDiv.style.backgroundColor = '';
+            });
+            newRow.appendChild(newDiv);
         }
-    );
-});
+
+        container.appendChild(newRow);
+    }
+}
+
+createGrid();
+
+
+
+
+const numButton = document.querySelector('.squareNumber')
+//numButton.addEventListener('click', prompt('how many squares'))
+
+
